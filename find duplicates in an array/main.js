@@ -1,9 +1,25 @@
 const stringList = ["abc","aa","abc","def","def"];
 
-const findDuplicates = stringList.filter((item,i,arr)=>{
-   return arr.indexOf(item)!==i
-})
-console.log(findDuplicates);
 
 
-console.log(stringList.indexOf("def")!==3);
+//!using anonymous function
+
+const result = ()=>{
+   
+   const data = stringList.filter((item,i,arr)=>{
+     return arr.indexOf(item)!==i;
+   });
+   console.log(data);
+}
+
+result();
+
+
+//!using IIFE function
+
+(function(){
+   const data1 = stringList.filter((item,i,arr)=>{
+      return arr.indexOf(item)!==i;
+   });
+   console.log(data1);
+})();
